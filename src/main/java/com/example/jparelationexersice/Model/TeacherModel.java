@@ -1,11 +1,14 @@
 package com.example.jparelationexersice.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Setter
@@ -38,4 +41,7 @@ public class TeacherModel {
     @PrimaryKeyJoinColumn
     private AddressModel address;
 
+    @OneToMany(mappedBy = "teacher")
+    @JsonIgnore
+    private List<CourseModel> courses;
 }

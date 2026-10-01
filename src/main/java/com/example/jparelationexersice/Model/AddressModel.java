@@ -26,10 +26,10 @@ public class AddressModel {
     @NotEmpty(message = "area cant be null")
     private String area;
 
-    @NotNull(message = "street cant be null")
+    @NotEmpty(message = "street cant be null")
     private String street;
 
-    @Positive
+    @Positive(message = "Building number must be positive")
     private Integer buildingNumber;
 
     @OneToOne
