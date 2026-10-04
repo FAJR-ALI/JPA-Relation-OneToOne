@@ -1,10 +1,7 @@
 package com.example.jparelationexersice.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -24,12 +21,15 @@ public class AddressModel {
     private Integer id;
 
     @NotEmpty(message = "area cant be null")
+    @Column(nullable = false)
     private String area;
 
     @NotEmpty(message = "street cant be null")
+    @Column(nullable = false)
     private String street;
 
     @Positive(message = "Building number must be positive")
+    @Column(nullable = false)
     private Integer buildingNumber;
 
     @OneToOne

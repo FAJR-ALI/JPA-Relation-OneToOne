@@ -20,12 +20,15 @@ public class StudentModel {
     private Integer id;
 
     @NotEmpty(message = "Name can't be empty")
+    @Column(nullable = false)
     private String name;
 
     @NotNull(message = "Age can't be null")
+    @Column(nullable = false)
     private Integer age;
 
     @NotEmpty(message = "Major can't be empty")
+    @Column(nullable = false)
     private String major;
 
     @ManyToMany

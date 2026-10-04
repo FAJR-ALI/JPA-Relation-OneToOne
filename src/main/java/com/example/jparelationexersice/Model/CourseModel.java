@@ -22,6 +22,7 @@ public class CourseModel {
     private Integer id;
 
     @NotEmpty(message = "Name can't be empty")
+    @Column(name = "course_name", nullable = false)
     private String name;
 
     @ManyToOne
